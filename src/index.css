@@ -2365,6 +2365,10 @@ html {
   }
   body {
     @apply bg-background text-foreground;
+
+    /* iPhone safe-area fix */
+    padding-top: env(safe-area-inset-top);
+    background-color: #0a0a0a;
   }
 }
 
