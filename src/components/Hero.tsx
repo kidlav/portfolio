@@ -11,7 +11,7 @@ export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black/40">
 
-<div style={{ width: '100%', height: '95%',top:'5%', position: 'absolute', opacity: '0.5'}}>
+<div style={{ width: '100%', height: '95%',top:'5%', position: 'absolute', opacity: '0.1'}}>
   <DotGrid
     dotSize={10}
     gap={15}
