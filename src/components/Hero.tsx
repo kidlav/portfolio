@@ -12,9 +12,9 @@ export function Hero() {
       {/* 2️⃣ Aurora background (НОВЫЙ ФОН) */}
 
       <Aurora
-        colorStops={["#3A29FF", "#FF94B4", "#FF3232"]}
-        blend={0.5}
-        amplitude={1.0}
+        colorStops={["#FF3232", "#00FFF7", "#8B00FF"]}
+        blend={1}
+        amplitude={.1}
         speed={0.5}
       />
 
