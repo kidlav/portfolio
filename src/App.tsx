@@ -6,10 +6,13 @@ import { About } from './components/About';
 import { ProjectsGallery } from './components/ProjectsGallery';
 import { Skills } from './components/Skills';
 import { Footer } from './components/Footer';
+import { Privacy } from './components/Privacy';
+import { Terms } from './components/Terms';
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [currentPage, setCurrentPage] = useState<'home' | 'privacy' | 'terms'>('home');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,12 +23,39 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    // Handle hash-based routing
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash === '#privacy') {
+        setCurrentPage('privacy');
+      } else if (hash === '#terms') {
+        setCurrentPage('terms');
+      } else {
+        setCurrentPage('home');
+      }
+    };
+
+    handleHashChange();
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
   const navLinks = [
     { name: 'About', href: '#about' },
     { name: 'Projects', href: '#projects' },
     { name: 'Skills', href: '#skills' },
     { name: 'Contact', href: '#contact' },
   ];
+
+  // Render different pages based on current page
+  if (currentPage === 'privacy') {
+    return <Privacy />;
+  }
+
+  if (currentPage === 'terms') {
+    return <Terms />;
+  }
 
   return (
     <div className="min-h-screen bg-[#0a0a0a]">
