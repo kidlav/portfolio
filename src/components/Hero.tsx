@@ -3,20 +3,27 @@ import { useEffect, useState } from 'react';
 import { ArrowRight, Sparkles } from 'lucide-react';
 
 // 1️⃣ — подключаем твой Aurora компонент
-import Aurora from './Aurora';
+// import Aurora from './Aurora';
+import DotGrid from './DotGrid';
+
 
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black/40">
 
-      {/* 2️⃣ Aurora background (НОВЫЙ ФОН) */}
-
-      <Aurora
-        colorStops={["#FF3232", "#00FFF7", "#8B00FF"]}
-        blend={1}
-        amplitude={.1}
-        speed={0.5}
-      />
+<div style={{ width: '100%', height: '95%',top:'5%', position: 'absolute', opacity: '0.5'}}>
+  <DotGrid
+    dotSize={10}
+    gap={15}
+    baseColor="#5227FF"
+    activeColor="#00FFF7"
+    proximity={120}
+    shockRadius={250}
+    shockStrength={5}
+    resistance={750}
+    returnDuration={1.5}
+  />
+</div>
 
       {/* 3️⃣ CONTENT — оставляем всё как есть */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 text-center">
