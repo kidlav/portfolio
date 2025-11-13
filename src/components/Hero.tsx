@@ -4,7 +4,9 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 
 // 1️⃣ — подключаем твой Aurora компонент
 // import Aurora from './Aurora';
-import DotGrid from './DotGrid';
+// import DotGrid from './DotGrid';
+import Threads from './Threads';
+
 
 
 export function Hero() {
@@ -12,16 +14,10 @@ export function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black/40">
 
 <div style={{ width: '100%', height: '95%',top:'5%', position: 'absolute', opacity: '0.1'}}>
-  <DotGrid
-    dotSize={10}
-    gap={15}
-    baseColor="#5227FF"
-    activeColor="#00FFF7"
-    proximity={120}
-    shockRadius={250}
-    shockStrength={5}
-    resistance={750}
-    returnDuration={1.5}
+<Threads
+    amplitude={1}
+    distance={0.2}
+    enableMouseInteraction={true}
   />
 </div>
 
